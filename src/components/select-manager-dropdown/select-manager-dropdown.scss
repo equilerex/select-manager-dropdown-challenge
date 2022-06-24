@@ -1,6 +1,7 @@
 .select-manager-dropdown {
   position: relative;
   display: block;
+  min-width: 140px;
   $b: &;
   &__input {
     outline: 0;
@@ -51,6 +52,7 @@
       align-items: center;
       justify-content: center;
       line-height: 0;
+      flex: 0 0 auto;
     }
     &__details {
       display: flex;
