@@ -1,0 +1,11 @@
+.App {
+  padding: 100px 0;
+  width: 500px;
+  margin: 0 auto;
+  text-align: left;
+  &__author {
+    padding: 20px 0;
+    color: #c4c6c6;
+    font-size: 20px;
+  }
+}
