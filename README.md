@@ -1,6 +1,9 @@
-# Getting Started with Create React App
+# Manager select
+### A frontend coding challenge solution by Joosep Kõivistik
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##  [🚀🚀 Live Demo 🚀🚀](https://lively-malasada-854894.netlify.app/)
+
+---
 
 ## Available Scripts
 
@@ -9,62 +12,59 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+### `npm test` 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `npm run build`   
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Notes / Possible improvements / Issues
+- I could only spare one evening and morning on this (crazy week and off to a vacation the next). so mostly an MVP rather than all the extra bells and whistles  
+- I made it as a manager specific component as specified in the challenge - This way it would be faster to code and review. In real life however, this should be built as a generic reusable "dropdown" component. Also, many elements should be their own separate standalone atomic components which could be used anywhere - fx avatar, the dropdown item.
+- Its responsive but ideally, the mobile behavior should be adressed on its own (either going with native select or adjusting the design accordingly)
+- Adding animations for slide in / out (too short on time to figure out the react approaches)
+- Could be more unit tests but im lacking some react specific knowledge and for the moment, im out of time to research that ;)
+- Note that I have maybe a day of react experience at this point, so most likely issues with:
+  - where should different methods / files / entities  best be located
+  - naming conventions / capital letter / camel case use  
+  - general file structuring - having so much code in the same file feels odd... might be doing something wrong there
+  - life cycle hooks / passing between nested components - looks like way too much bootstrapping? must be a cleaner way.
+- Acceptance criteria fulfilled and tested. additionally:
+  - search works both ways (firstName + lastName ===  lastName + firstName)
+  - escape key closes and un-focuses the dropdown
+  - endpoint loading and error states
+  - loads managers only upon interaction with the dropdown
+  -  added some fallbacks in case of faulty / missing data (possibly redundant in case were 100% confident in the data... but real life shows thats often not the case)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## User story
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+As a user, I am able to filter managers so I can pick the desired one
+![sketch](/public/sketch.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Acceptance criteria
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- When user clicks into the input field, he/she sees the full list of managers.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- The list shows up to 2 managers, the rest can be seen by scrolling inside the list.
 
-## Learn More
+- When user starts typing into the input field, matching results appear in the list.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Managers are filtered on both first name and last name.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Filtering is case insensitive.
 
-### Code Splitting
+- Managers are filtered across first name and last name (eg. “tMc” => Harriet McKinnley.)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- When user confirms the selection with the enter key, the full name of the selected manager is displayed in the input field and the list of available managers hides. (Bonus)
 
-### Analyzing the Bundle Size
+- User can navigate the list of managers with arrow up and arrow down keys. (Bonus)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- When the input loses focus, the list of available managers disappears and the entered value is being kept.
 
-### Making a Progressive Web App
+- When the user clicks back into the input field a list of filtered managers by the kept value is shown.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

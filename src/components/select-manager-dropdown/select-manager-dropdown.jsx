@@ -205,3 +205,9 @@ function checkFullNameMatch(manager, searchString) {
 }
 
 export default SelectManagerDropdown;
+
+export const exportedForTesting = {
+  checkFullNameMatch,
+  filterManagersBySearch,
+  initials
+}
